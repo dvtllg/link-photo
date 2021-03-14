@@ -71,8 +71,8 @@
             </button>
         </div>
     </div>
-    <input type="file" capture="camera" accept="image/*" id="takePhoto" hidden>
-    <input type="file" accept="image/*" id="inportPhoto" hidden>
+    <input type="file" capture="camera" accept="image/*" id="takePhoto" >
+    <input type="file" accept="image/*" id="inportPhoto" >
     <div>
         <img id="inputImage" class="image-class col">
     </div>
@@ -144,8 +144,14 @@
 
         function removePhoto() {
             disableButtons(true);
+            removeFiles();
             $('#inputImage').removeAttr('src');
             $('#inputImage').hide();
+        }
+
+        function removeFiles(){
+            $('#inportPhoto').val(null);
+            $('#takePhoto').val(null);
         }
     </script>
 
