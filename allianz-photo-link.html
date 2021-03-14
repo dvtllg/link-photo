@@ -51,7 +51,6 @@
         #footer {
             background-color: white;
         }
-
     </style>
 </head>
 
@@ -115,7 +114,8 @@
                     $('#inputImage').attr('src', e.target.result);
                 }
                 reader.readAsDataURL(input.files[0]);
-                console.log('RESULT: '+$('#inputImage')[0].src);
+                $('#inputImage').show();
+                console.log('RESULT: ' + $('#inputImage')[0].src);
                 disableButtons(false);
             }
         }
@@ -144,7 +144,8 @@
 
         function removePhoto() {
             disableButtons(true);
-            $('#inputImage').attr('src', '');
+            $('#inputImage').removeAttr('src');
+            $('#inputImage').hide();
         }
     </script>
 
